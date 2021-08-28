@@ -11,12 +11,14 @@ public class PlayerMovment : MonoBehaviour
     [SerializeField] private float _raycatsDistance;
     [SerializeField] private LayerMask _groundLayerMask;
 
-    private Rigidbody2D _r2b2;
+    private Rigidbody2D _rigidbody2D;
     private Animator _animator;
+
+    private const string Speed  = "Speed";
 
     private void Awake()
     {
-        _r2b2 = GetComponent<Rigidbody2D>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
     }
 
@@ -25,11 +27,11 @@ public class PlayerMovment : MonoBehaviour
         var movevment = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movevment, 0, 0) * Time.deltaTime * _speed;
 
-        _animator.SetFloat("Speed", Mathf.Abs(movevment));
+        _animator.SetFloat(Speed, Mathf.Abs(movevment));
 
         if (GroundCheck() && Input.GetButtonDown("Jump"))
         {
-            _r2b2.AddForce(Vector2.up * _jumpForce);
+            _rigidbody2D.AddForce(Vector2.up * _jumpForce);
         }
     }
 
