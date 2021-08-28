@@ -20,16 +20,16 @@ public class LandPatrol : MonoBehaviour
         {
             if (_isMovingRight == true)
             {
-                MyCodeShit(0, -180, 0, false);
+                Rotation(0, -180, 0, false);
             }
             else
             {
-                MyCodeShit(0, 0, 0, true);
+                Rotation(0, 0, 0, true);
             }
         }
     }
 
-    private void MyCodeShit(int x, int y, int z, bool resualt)
+    private void Rotation(int x, int y, int z, bool resualt)
     {
         transform.eulerAngles = new Vector3(x, y, z);
         _isMovingRight = resualt;
