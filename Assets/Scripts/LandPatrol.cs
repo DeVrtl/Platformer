@@ -20,16 +20,16 @@ public class LandPatrol : MonoBehaviour
         {
             if (_isMovingRight == true)
             {
-                Rotation(0, -180, 0, false);
+                RotateWhenGroundNotDetected(0, -180, 0, false);
             }
             else
             {
-                Rotation(0, 0, 0, true);
+                RotateWhenGroundNotDetected(0, 0, 0, true);
             }
         }
     }
 
-    private void Rotation(int x, int y, int z, bool resualt)
+    private void RotateWhenGroundNotDetected(int x, int y, int z, bool resualt)
     {
         transform.eulerAngles = new Vector3(x, y, z);
         _isMovingRight = resualt;
