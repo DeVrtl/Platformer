@@ -14,6 +14,8 @@ public class PlayerMovment : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
 
+    private const string Jump = "Jump";
+
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -27,7 +29,7 @@ public class PlayerMovment : MonoBehaviour
 
         _animator.SetFloat(AnimationPlayerController.Params.Speed, Mathf.Abs(movevment));
 
-        if (GroundCheck() && Input.GetButtonDown("Jump"))
+        if (GroundCheck() && Input.GetButtonDown(Jump))
         {
             _rigidbody2D.AddForce(Vector2.up * _jumpForce);
         }
