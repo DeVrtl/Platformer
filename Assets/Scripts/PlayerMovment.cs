@@ -15,6 +15,7 @@ public class PlayerMovment : MonoBehaviour
     private Animator _animator;
 
     private const string Jump = "Jump";
+    private const string Horizontal = "Horizontal";
 
     private void Awake()
     {
@@ -24,7 +25,7 @@ public class PlayerMovment : MonoBehaviour
 
     private void Update()
     {
-        var movevment = Input.GetAxis("Horizontal");
+        var movevment = Input.GetAxis(Horizontal);
         transform.position += new Vector3(movevment, 0, 0) * Time.deltaTime * _speed;
 
         _animator.SetFloat(AnimationPlayerController.Params.Speed, Mathf.Abs(movevment));
