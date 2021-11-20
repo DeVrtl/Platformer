@@ -6,7 +6,7 @@ public class Coin : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<PlayerMovment>(out PlayerMovment player))
+        if (collision.TryGetComponent<PlayerMovement>(out PlayerMovement player))
         {
             Destroy(gameObject);
         }
