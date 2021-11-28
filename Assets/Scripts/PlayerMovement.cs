@@ -6,6 +6,9 @@ using UnityEngine;
 [RequireComponent (typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
+    private const string Jump = "Jump";
+    private const string Horizontal = "Horizontal";
+
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpForce;
     [SerializeField] private float _raycatsDistance;
@@ -13,9 +16,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
-
-    private const string Jump = "Jump";
-    private const string Horizontal = "Horizontal";
 
     private void Awake()
     {
